@@ -49,14 +49,16 @@ public class UnitPlayer {
 
 	void runPitcher(UnitController uc)
 	{
-		Location[] bases = uc.senseObjects(MapObject.BASE, 4);
-		Location[] stadiums = uc.senseObjects(MapObject.STADIUM, 4);
+		float radius = uc.getType().getStat(UnitStat.VISION_RANGE);
+
+		Location[] bases = uc.senseObjects(MapObject.BASE, radius);
+		Location[] stadiums = uc.senseObjects(MapObject.STADIUM, radius);
 		if (bases.length == 0 && stadiums.length == 0) {
 			moveAtRandom(uc);
-		} else if (stadiums.length > 0) {
-			moveTowards(uc, stadiums[0]);
-		} else {
+		} else if (bases.length > 0) {
 			moveTowards(uc, bases[0]);
+		} else {
+			moveTowards(uc, stadiums[0]);
 		}
 	}
 
@@ -71,8 +73,8 @@ public class UnitPlayer {
 		} else {
 			moveTowards(uc, enemies[0].getLocation());
 			Direction dir = uc.getLocation().directionTo(enemies[0].getLocation());
-			if (uc.canBat(dir, 3)) {
-				uc.bat(dir, 3);
+			if (uc.canBat(dir, GameConstants.MAX_STRENGTH)) {
+				uc.bat(dir, GameConstants.MAX_STRENGTH);
 			}
 		}
 
