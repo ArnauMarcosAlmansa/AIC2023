@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a4b07a9c-deab-4569-a1a0-5db58ebcdfb1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../build.defaults" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../description/AIC2023_ca.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../description/AIC2023_en.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/Direction.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/GameConstants.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/Location.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/MapObject.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/Team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/UnitController.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/UnitInfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/UnitStat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/UnitType.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/aic2023/user/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/allclasses-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/allclasses-noframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-19.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-20.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../doc/en/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../games/20230922-225948-demoplayer-nullplayer-Basic1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../installation_manual/InstallationManual_ca.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../installation_manual/InstallationManual_en.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jars/aic2023.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../jars/asm-all-5.0.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maps/Basic1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maps/Basic2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maps/Basic3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/demoplayer/UnitPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/nullplayer/UnitPlayer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2Vn5FNlN3VBPq3WNPU2BTAfyhNa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/arnau/workspace/UAB/TA/AIC2023",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4b07a9c-deab-4569-a1a0-5db58ebcdfb1" name="Changes" comment="" />
+      <created>1695458900422</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695458900422</updated>
+      <workItem from="1695458901426" duration="76000" />
+      <workItem from="1695458984907" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
