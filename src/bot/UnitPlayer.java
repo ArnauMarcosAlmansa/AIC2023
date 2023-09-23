@@ -10,6 +10,18 @@ import java.util.List;
 
 public class UnitPlayer {
 
+	int STATE = 9999;
+	int WEST_BORDER = 9996;
+	int SOUTH_BORDER = 9994;
+	int EAST_BORDER = 9992;
+	int NORTH_BORDER = 9990;
+
+
+
+	boolean isExploring = true;
+
+
+
 	public void run(UnitController uc) {
 		/*Insert here the code that should be executed only at the beginning of the unit's lifespan*/
 		while (true) {
@@ -33,6 +45,15 @@ public class UnitPlayer {
 
 	void runHq(UnitController uc)
 	{
+		if (state(uc) == 0) {
+			if (allBordersFound(uc)) {
+				setState(uc, 1);
+			}
+
+			runHqExplore(uc);
+			return;
+		}
+
 		if (uc.getReputation() < 100) return;
 
 		Direction[] directions = randomDirections();
@@ -47,8 +68,34 @@ public class UnitPlayer {
 		}
 	}
 
+	void runHqExplore(UnitController uc)
+	{
+		if (uc.getReputation() < 40) return;
+
+		Direction[] directions = randomDirections();
+		UnitType[] units = shuffleUnitTypes(new UnitType[] {UnitType.PITCHER, UnitType.CATCHER});
+
+		boolean canSpawn = true;
+		while (canSpawn) {
+			for (UnitType type : units) {
+				for (Direction dir : directions) {
+					if (uc.canRecruitUnit(type, dir)) {
+						uc.recruitUnit(type, dir);
+					} else {
+						canSpawn = false;
+					}
+				}
+			}
+		}
+	}
+
 	void runPitcher(UnitController uc)
 	{
+		if (uc.read(STATE) == 0 && isExploring) {
+			// estamos explorando
+			runExplore(uc);
+		}
+
 		float radius = uc.getType().getStat(UnitStat.VISION_RANGE);
 
 		Location[] bases = uc.senseObjects(MapObject.BASE, radius);
@@ -64,6 +111,12 @@ public class UnitPlayer {
 
 	void runBatter(UnitController uc)
 	{
+		if (uc.read(STATE) == 0 && isExploring) {
+			// estamos explorando
+			runExplore(uc);
+			return;
+		}
+
 		float radius = uc.getType().getStat(UnitStat.VISION_RANGE);
 		Team opponent = uc.getOpponent();
 		UnitInfo[] enemies = uc.senseUnits(radius, opponent);
@@ -82,9 +135,96 @@ public class UnitPlayer {
 
 	void runCatcher(UnitController uc)
 	{
-		moveAtRandom(uc);
+		if (uc.read(STATE) == 0 && isExploring) {
+			// estamos explorando
+			runExplore(uc);
+		} else {
+			moveAtRandom(uc);
+		}
 	}
 
+	void runExplore(UnitController uc)
+	{
+		Direction dir = fourDirFromId(uc.getInfo().getID());
+		if (uc.canMove(dir)) {
+			uc.move(dir);
+			Location end = uc.getLocation().add(dir);
+			if (uc.isOutOfMap(end)) {
+				int border = getBorderFromDir(dir);
+				uc.write(border, end.x);
+				uc.write(border + 1, end.y);
+
+				isExploring = false;
+			}
+		} else {
+			moveAtRandom(uc);
+		}
+	}
+
+	int getBorderFromDir(Direction dir)
+	{
+		if (dir == Direction.NORTH) {
+			return NORTH_BORDER;
+		} else if (dir == Direction.EAST) {
+			return EAST_BORDER;
+		} else if (dir == Direction.SOUTH) {
+			return SOUTH_BORDER;
+		} else {
+			return WEST_BORDER;
+		}
+	}
+
+	Direction fourDirFromId(int id)
+	{
+		int rem = id % 4;
+		if (rem == 0) {
+			return Direction.NORTH;
+		} else if (rem == 1) {
+			return Direction.EAST;
+		} else if (rem == 2) {
+			return Direction.SOUTH;
+		} else {
+			return Direction.WEST;
+		}
+	}
+
+	Direction dirFromId(int id)
+	{
+		int rem = id % 8;
+		if (rem == 0) {
+			return Direction.NORTH;
+		} else if (rem == 1) {
+			return Direction.NORTHEAST;
+		} else if (rem == 2) {
+			return Direction.EAST;
+		} else if (rem == 3) {
+			return Direction.SOUTHEAST;
+		} else if (rem == 4) {
+			return Direction.SOUTH;
+		} else if (rem == 5) {
+			return Direction.SOUTHWEST;
+		} else if (rem == 6) {
+			return Direction.WEST;
+		} else {
+			return Direction.NORTHWEST;
+		}
+	}
+
+
+	int state(UnitController uc)
+	{
+		return uc.read(STATE);
+	}
+
+	void setState(UnitController uc, int state)
+	{
+		uc.write(STATE, state);
+	}
+
+	boolean allBordersFound(UnitController uc)
+	{
+		return uc.read(NORTH_BORDER) != 0 && uc.read(EAST_BORDER) != 0 && uc.read(SOUTH_BORDER) != 0 && uc.read(WEST_BORDER) != 0;
+	}
 
 	void moveTowards(UnitController uc, Location loc)
 	{
@@ -132,6 +272,13 @@ public class UnitPlayer {
 	{
 		UnitType[] types = UnitType.values();
 
+		shuffleUnitTypes(types);
+
+		return types;
+	}
+
+	UnitType[] shuffleUnitTypes(UnitType[] types)
+	{
 		for (int i = 0; i < types.length; i++) {
 			int a = (int) (Math.random() * types.length);
 			int b = (int) (Math.random() * types.length);
